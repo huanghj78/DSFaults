@@ -22,7 +22,7 @@ Cluster becomes unavailabe.
 
 **Fault Scenario**
 
-Node creash and restart.
+Node crash and restart.
 
 **Workload**
 

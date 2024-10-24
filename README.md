@@ -6,7 +6,7 @@ This project collects and analyzes common failure scenarios in distributed syste
 ## Databases
 
 ### etcd
-In the [etcd](./etcd/doc.md) directory, you'll find fault scenarios and analyses related to etcd.
+You'll find fault scenarios and analyses related to etcd in [etcd](./etcd/doc.md).
 
 ### Dqlite
-In the [Dqlite](./dqlite/doc.md) directory, you'll find fault scenarios and analyses related to Dqlite.
+You'll find fault scenarios and analyses related to Dqlite in [Dqlite](./dqlite/doc.md).
