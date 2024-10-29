@@ -1,8 +1,8 @@
 # etcd Fault Scenarios
 
-This directory contains common fault scenarios related to etcd.
+This directory contains common fault scenarios related to [etcd](https://github.com/etcd-io/etcd).
 
-## Crash when joining nodes to the cluster [[Issue #123]](https://github.com/yourusername/yourrepository/issues/123)
+## Crash when joining nodes to the cluster [[Issue #716]](https://github.com/etcd-io/etcd/issues/716)
 
 **Summary**  
 When multiple nodes are joined simultaneously, all but one node crashes. Introducing a 5-second delay between joins usually prevents crashes but not always.

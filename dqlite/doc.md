@@ -1,6 +1,6 @@
 # Dqlite Fault Scenarios
 
-This directory contains common fault scenarios related to Dqlite.
+This directory contains common fault scenarios related to [Dqlite](https://github.com/canonical/dqlite).
 
 ## LXD start up loop trying to connect to dqlite after loss of quorum [[Issue #323]](https://github.com/canonical/dqlite/issues/323)
 
