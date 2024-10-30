@@ -12,4 +12,4 @@ You'll find fault scenarios and analyses related to etcd in [etcd](./etcd/doc.md
 You'll find fault scenarios and analyses related to Dqlite in [Dqlite](./dqlite/doc.md).
 
 ### redisraft
-You'll find fault scenarios and analyses related to Dqlite in [Dqlite](./redisraft/doc.md).
+You'll find fault scenarios and analyses related to RedisRaft in [redisraft](./redisraft/doc.md).
