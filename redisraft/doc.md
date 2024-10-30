@@ -54,7 +54,7 @@ Workload involved appending data to keys in the Redis database during the test, 
 
 None
 
-## Transient empty values on process restart
+## Transient empty values on process restart [[Issue #18]](https://github.com/RedisLabs/redisraft/issues/18)
 
 **Summary**
 
