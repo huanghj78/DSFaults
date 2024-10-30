@@ -53,3 +53,30 @@ Workload involved appending data to keys in the Redis database during the test, 
 **Version**
 
 None
+
+## Transient empty values on process restart
+
+**Summary**
+
+This issue describes a problem in the redis-raft implementation where processes returning empty reads upon crashing and restarting leads to inconsistencies in the data served.
+
+**Symptoms**
+
+The primary symptom is the occurrence of empty reads (e.g., returning [] instead of the expected values) from the database after nodes are killed and restarted.
+
+**Root Cause**
+
+The root cause is related to the initialization process of Redis after a crash, specifically the timing of requests being served before the Raft protocol's initialization has completed.
+
+**Fault Scenario**
+
+The issue is triggered when all nodes in the cluster are killed and then restarted, followed by additional node terminations leading to a majority being down.
+
+**Workload**
+
+The workload that triggers this issue includes operations involving appending data to keys.
+
+
+**Version**
+
+The issue was identified in version redis f88f866 and redisraft d589127, with further testing showing similar behavior in subsequent versions.
