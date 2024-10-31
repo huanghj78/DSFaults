@@ -80,3 +80,5 @@ The workload that triggers this issue includes operations involving appending da
 **Version**
 
 The issue was identified in version redis f88f866 and redisraft d589127, with further testing showing similar behavior in subsequent versions.
+
+
