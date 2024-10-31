@@ -13,3 +13,6 @@ You'll find fault scenarios and analyses related to Dqlite in [Dqlite](./dqlite/
 
 ### redisraft
 You'll find fault scenarios and analyses related to RedisRaft in [redisraft](./redisraft/doc.md).
+
+### zookeeper
+You'll find fault scenarios and analyses related to Zookeeper in [zookeeper](./zookeeper/doc.md).
