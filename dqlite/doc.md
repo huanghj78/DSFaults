@@ -34,3 +34,29 @@ None
 None
 
 
+## LXD dqlite crash removing member of cluster [[Issue #324]](https://github.com/canonical/dqlite/issues/324)
+**Summary**  
+
+This issue reports a crash in LXD when attempting to remove a member from a dqlite cluster, triggered by an assertion failure in the Raft implementation.
+
+**Symptoms**  
+
+The cluster becomes unstable, resulting in a crash during the member removal process and errors related to connection resets.
+
+
+**Root Cause**  
+
+The root cause is an assertion failure in the Raft protocol implementation, specifically when handling the removal of a cluster member.
+
+**Fault Scenario**
+
+The issue occurs during the operation of removing a member from the dqlite cluster, which leads to the crash.
+
+**Workload**
+
+None
+
+
+**Version**
+
+None
