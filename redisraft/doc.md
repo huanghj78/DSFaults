@@ -1,4 +1,4 @@
-# redisraft Fault Scenarios
+# Redisraft Fault Scenarios
 
 This directory contains common fault scenarios related to [redisraft](https://github.com/RedisLabs/redisraft).
 

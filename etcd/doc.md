@@ -1,4 +1,4 @@
-# etcd Fault Scenarios
+# Etcd Fault Scenarios
 
 This directory contains common fault scenarios related to [etcd](https://github.com/etcd-io/etcd).
 
