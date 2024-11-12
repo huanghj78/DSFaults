@@ -17,7 +17,7 @@ After this exception Leader server still remains leader. After this non recovera
 
 The problem is because quorum is not being shutdown along with other services. We should also call shutdown on org.apache.zookeeper.server.quorum.QuorumPeer.
 
-### Fault Scenario
+### Fault Type
 
 The issue is triggered when the leader fails to write transaction log due to an IO exception. 
 
@@ -46,7 +46,7 @@ The cluster becomes unavailable as the leader fails to accept any followers, lea
 
 The issue arises because the exception handling in the Leader.LearnerCnxAcceptor thread does not effectively manage the error state, preventing the leader from detecting it and transitioning to a proper state.
 
-### Fault Scenario
+### Fault Type
 
 When a ZooKeeper cluster of 3 nodes is started within a 2-second window, the ServerSocket#accept invocation throws an exception in the LearnerCnxAcceptorHandler for the second follower attempting to join the quorum. 
 

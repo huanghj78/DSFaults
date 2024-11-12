@@ -20,7 +20,7 @@ Cluster becomes unavailabe.
 [Issue #234](https://github.com/canonical/raft/issues/234)
 
 
-### Fault Scenario
+### Fault Type
 
 Node crash and restart.
 
@@ -48,7 +48,7 @@ The cluster becomes unstable, resulting in a crash during the member removal pro
 
 The root cause is an assertion failure in the Raft protocol implementation, specifically when handling the removal of a cluster member.
 
-### Fault Scenario
+### Fault Type
 
 The issue occurs during the operation of removing a member from the dqlite cluster, which leads to the crash.
 

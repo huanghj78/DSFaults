@@ -18,7 +18,7 @@ This issue addresses a memory leak in Redis when operating under an asymmetric n
 
 This appears to be a timing bug or race condition, potentially due to aggressive IO timeouts. Nodes give up after a few hundred milliseconds of trying.
 
-### Fault Scenario
+### Fault Type
 
 The fault is triggered during a one-way 100% packet loss from one primary node (P1) to another (P2) in a two-shard Redis cluster.
 
@@ -49,7 +49,7 @@ This issue addresses a problem in Redis Cluster where, during a failover, certai
 
 The root cause lies in the delay or loss of PONG messages that communicate the cluster's updated replication state. This can result in observer nodes seeing an inconsistent intermediate state, which creates circular replication and leads to temporary slot loss. The problem stems from the lack of strong consistency in handling topology changes within the Redis Cluster.
 
-### Fault Scenario
+### Fault Type
 
 The fault occurs when a network latency or partition prevents a node’s state update message from reaching other nodes. Specifically, if a node fails to receive a PONG message indicating a replication role change, it may misinterpret the cluster state, resulting in an incorrect replication loop and slot loss.
 

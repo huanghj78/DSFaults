@@ -16,7 +16,7 @@ When multiple nodes are joined simultaneously, all but one node crashes. Introdu
 
 This appears to be a timing bug or race condition, potentially due to aggressive IO timeouts. Nodes give up after a few hundred milliseconds of trying.
 
-### Fault Scenario
+### Fault Type
 
 Multiple nodes restart simultaneously.
 
@@ -46,7 +46,7 @@ The cluster exhibits inconsistent state, allowing write operations to occur even
 
 The root cause is the automatic adjustment of the cluster size when nodes are removed due to disconnection, which allows the cluster to continue accepting writes with insufficient quorum.
 
-### Fault Scenario
+### Fault Type
 
 The fault scenario involves a network partition where two subsets of nodes can communicate with each other while being isolated from the other subset, enabling both groups to accept changes.
 
