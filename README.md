@@ -33,6 +33,7 @@ This project collects and analyzes common failure scenarios in distributed syste
 |[Ae-2](./Aerospike/doc.md#cluster-unavaliable-after-nodes-crash-and-restart-reported-by-jepsen)|Cluster unavaliable after nodes crash and restart|Node crash and restart|
 |[Ae-3](./Aerospike/doc.md#updates-lost-due-to-concurrent-crashes-reported-by-jepsen)|Updates lost due to concurrent crashes|Concurrent node crash|
 |[Ch-511](./chronos/doc.md#jobs-dont-run-when-a-network-partition-occurs--issue-511)|Jobs don't run when a network partition occurs|Network parition|
+|[Cr-3711](./Crate/doc.md#_version-does-not-uniquely-identify-a-particular-version-of-a-row-issue-3711)|Inconsistent Row Values in CrateDB During Network Partition with Identical _version Numbers|Network partition
 
 ## Paper
 * Efficient Exposure of Partial Failure Bugs in Distributed Systems with Inferred Abstract States
