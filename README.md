@@ -32,6 +32,7 @@ This project collects and analyzes common failure scenarios in distributed syste
 |[Ae-1](./Aerospike/doc.md#dirty-reads-after-partitions-reported-by-jepsen)|Dirty Reads After Partitions|Network partition and node crash|
 |[Ae-2](./Aerospike/doc.md#cluster-unavaliable-after-nodes-crash-and-restart-reported-by-jepsen)|Cluster unavaliable after nodes crash and restart|Node crash and restart|
 |[Ae-3](./Aerospike/doc.md#updates-lost-due-to-concurrent-crashes-reported-by-jepsen)|Updates lost due to concurrent crashes|Concurrent node crash|
+|[Ch-511](./chronos/doc.md#jobs-dont-run-when-a-network-partition-occurs--issue-511)|Jobs don't run when a network partition occurs|Network parition|
 
 ## Paper
 * Efficient Exposure of Partial Failure Bugs in Distributed Systems with Inferred Abstract States
