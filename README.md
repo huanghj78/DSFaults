@@ -17,7 +17,7 @@ This project collects and analyzes common failure scenarios in distributed syste
 
 ## Overview
 
-| Issue   | Description | Fault Scenario | 
+| Issue   | Fault Scenario | Fault Type | 
 |----------|----------|----------|
 | [ZK-2247](./zookeeper/doc.md#zookeeper-service-becomes-unavailable-when-leader-fails-to-write-transaction-log-issue-2247)    | Zookeeper service becomes unavailable when leader fails to write transaction log    |  IO exception   |
 | [ZK-4203](./zookeeper/doc.md#leader-swallows-the-zookeeperserverstateerror-from-leaderlearnercnxacceptor-in-some-concurrency-condition-issue-4203)   | Leader swallows the ZooKeeperServer.State.ERROR from Leader.LearnerCnxAcceptor in some concurrency condition   | Restart, IO exception   | 
