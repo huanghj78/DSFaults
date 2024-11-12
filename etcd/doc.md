@@ -48,7 +48,7 @@ The root cause is the automatic adjustment of the cluster size when nodes are re
 
 ### Fault Type
 
-The fault scenario involves a network partition where two subsets of nodes can communicate with each other while being isolated from the other subset, enabling both groups to accept changes.
+The fault types involves a network partition where two subsets of nodes can communicate with each other while being isolated from the other subset, enabling both groups to accept changes.
 
 
 ### Workload

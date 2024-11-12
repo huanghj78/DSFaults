@@ -18,7 +18,7 @@ The root cause of the issue is a missing re-entrancy check when applying command
 
 ### Fault Type
 
-The fault scenario includes sporadic leader elections, pausing or killing nodes, and network partitions, all leading to data loss during failover.
+The fault types includes sporadic leader elections, pausing or killing nodes, and network partitions, all leading to data loss during failover.
 
 ### Workload
 
