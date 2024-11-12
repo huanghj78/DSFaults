@@ -59,25 +59,31 @@ None
 3.99.0.3
 
 
-###  Updates lost due to concurrent crashes losing updates due to concurrent crashes [[Reported by Jepsen]](https://jepsen.io/analyses/aerospike-3-99-0-3)
+##  Updates lost due to concurrent crashes [[Reported by Jepsen]](https://jepsen.io/analyses/aerospike-3-99-0-3)
 
 ### Summary
 
-During network partition tests in Aerospike 3.99.0.3, nonlinearizable operations were observed, leading to unexpected and erroneous read results after the partition was resolved. This issue appears to be related to how Aerospike handles write failures during network disruptions, especially in cases where operations are retried incorrectly.
+Aerospike 3.99.0.3 exhibited data loss, especially in cases where updates were only stored in memory and not yet written to disk. This data loss was exacerbated by concurrent crashes and the revival of dead shards. Aerospike’s asynchronous write policy, intended to boost performance, contributed to this issue by not persisting data to disk immediately, leading to missing records after failures.
 
 ### Symptoms
 
-* Nonlinearizable histories with reads returning impossible values.
+* Lost updates during concurrent node crashes and revive operations.
+* Reads showing missing data, especially in tests involving multiple node restarts.
+* Observed data loss and recovery ratios indicating missing records that were not stored on disk.
 
-* Reads reflecting values that were never successfully written (e.g., a key unexpectedly reads as "4" after a partition, despite no write of "4" succeeding).
 
 ### Root Cause
 
-The issue stems from Aerospike’s retry logic in its clustering algorithm. When network failures cause writes to fail, Aerospike retries the operation. However, this retry mechanism may result in a misleading error code (e.g., :unavailable), causing subsequent reads to reflect values from failed writes rather than the latest consistent state. This incorrect handling of retries leads to unsafe effects, as non-idempotent operations can be repeated and yield unexpected results.
+The root cause of this issue lies in Aerospike’s design to acknowledge writes without first persisting them to disk, relying instead on memory and redundancy across nodes. When concurrent crashes occur, the unflushed in-memory writes are lost if all replicas for a record are down. Additionally, reviving dead shards prematurely can cause Aerospike to recognize stale data from previously failed nodes, leading to further loss of updates.
 
 ### Fault Type
 
+Concurrent node crashes.
 
+### Workload
+
+Write-heavy workloads involving set operations.
+Tests requiring node restarts, revives, and reclustering operations.
 
 ### Version
 

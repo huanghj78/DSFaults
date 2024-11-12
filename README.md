@@ -29,6 +29,9 @@ This project collects and analyzes common failure scenarios in distributed syste
 |[RR-17](./redisraft/doc.md#possible-lost-updates-with-partitions-and-membership-changes-issue-17) |Possible lost updates with partitions and membership changes|Network partition|
 |[RD-9688](./redis/doc.md#unbounded-memory-usage-by-cluster-bus-link-buffers-in-face-of-asymmetric-network-partition-issue-9688) |Unbounded memory usage by cluster bus link buffers in face of asymmetric network partition|Network loss|
 |[RD-13018](./redis/doc.md#preventing-temporary-circular-replication-and-slot-loss-in-redis-cluster-failover-issue-13018) |Preventing Temporary Circular Replication and Slot Loss in Redis Cluster Failover |Network partition|
+|[Ae-1](./Aerospike/doc.md#dirty-reads-after-partitions-reported-by-jepsen)|Dirty Reads After Partitions|Network partition and node crash|
+|[Ae-2](./Aerospike/doc.md#cluster-unavaliable-after-nodes-crash-and-restart-reported-by-jepsen)|Cluster unavaliable after nodes crash and restart|Node crash and restart|
+|[Ae-3](./Aerospike/doc.md#updates-lost-due-to-concurrent-crashes-reported-by-jepsen)|Updates lost due to concurrent crashes|Concurrent node crash|
 
 ## Paper
 * Efficient Exposure of Partial Failure Bugs in Distributed Systems with Inferred Abstract States
