@@ -30,4 +30,14 @@ This project collects and analyzes common failure scenarios in distributed syste
 |[RD-9688](./redis/doc.md#unbounded-memory-usage-by-cluster-bus-link-buffers-in-face-of-asymmetric-network-partition-issue-9688) |Unbounded memory usage by cluster bus link buffers in face of asymmetric network partition|Network loss|
 |[RD-13018](./redis/doc.md#preventing-temporary-circular-replication-and-slot-loss-in-redis-cluster-failover-issue-13018) |Preventing Temporary Circular Replication and Slot Loss in Redis Cluster Failover |Network partition|
 
+## Paper
+* Efficient Exposure of Partial Failure Bugs in Distributed Systems with Inferred Abstract States
+* Greybox Fuzzing of Distributed Systems
+* Chronos: Finding Timeout Bugs in Practical Distributed Systems by Deep-Priority Fuzzing with Transient Delay
+* Coverage Guided Fault Injection for Cloud Systems
+* CoFI: Consistency-Guided Fault Injection for Cloud Systems
+* Phoenix: Detect and Locate Resilience Issues in Blockchain via Context-Sensitive Chaos
+* Efficient Reproduction of Fault-Induced Failures in Distributed Systems with Feedback-Driven Fault Injection
 
+## Report
+* [https://jepsen.io/analyses](https://jepsen.io/analyses)
