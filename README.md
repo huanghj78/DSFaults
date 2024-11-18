@@ -11,6 +11,8 @@ This project collects and analyzes common failure scenarios in distributed syste
 
 # [Crate](./Crate/doc.md).
 
+### [CephFS](./CephFS/doc.md).
+
 ### [Etcd](./etcd/doc.md).
 
 ### [Dqlite](./dqlite/doc.md).
