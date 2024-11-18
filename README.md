@@ -7,9 +7,9 @@ This project collects and analyzes common failure scenarios in distributed syste
 
 ### [Aerospike](./Aerospike/doc.md).
 
-# [Chronos](./chronos/doc.md).
+### [Chronos](./chronos/doc.md).
 
-# [Crate](./Crate/doc.md).
+### [Crate](./Crate/doc.md).
 
 ### [CephFS](./CephFS/doc.md).
 
