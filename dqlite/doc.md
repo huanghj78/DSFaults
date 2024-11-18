@@ -60,3 +60,23 @@ None
 ### Version
 
 None
+
+## Violate invariant as a segment cannot open while truncating inconsistent logs [[Reported by MALLORY]](https://arxiv.org/pdf/2305.02601)
+
+
+### Summary
+The cluster undergoes a sequence of environment faults, including a network partition (#{𝑆1, 𝑆2}, #{𝑆3, 𝑆4, 𝑆5}), leader 𝑆1 crashing, and network healing. As a result of these faults, server 𝑆2 ends up with conflicting entries with the leader 𝑆3, which must be removed. However, the conflicting entries are in a snapshot, which makes the removal fail.
+
+### Symptoms
+
+* Server become unavailable
+
+### Root Cause
+
+This bug happens due to a flawed logic design: it doesn't consider the log entry operation just after a snapshot (it will remove all current log).
+
+### Fault Type
+
+Node crashes and network partition
+
+

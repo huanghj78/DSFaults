@@ -59,3 +59,24 @@ None
 ### Version
 
 3.6.2
+
+
+
+## DeadLock in ZooKeeper node when both sendThread and reconnection timeout and tries to update states. [[Reported by Chronos]](https://ieeexplore.ieee.org/document/10646793)
+
+### Summary
+A SendThread acquires the packetQueue lock to clean up the requests when a request times out, and the main thread attempts to reconnect and acquires the ConnState lock at the same time. Two threads wait for the lock each other holds.
+
+### Symptoms
+
+* The server goes into deadlock state.
+
+### Root Cause
+
+The bug can only be triggered if the packet queue length is long enough that SendThread cannot release the lock in time if there happens to be a network delay at that moment.
+
+### Fault Type
+
+Delay
+
+
