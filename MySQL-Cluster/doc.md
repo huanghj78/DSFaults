@@ -2,7 +2,7 @@
 
 This directory contains common fault scenarios related to [MySQL-Cluster](https://github.com/mysql/mysql-server).
 
-##  SEGV cased by nullptr after a series of reconnection timeouts in MySQL-Cluster breaks down multiple nodes. [[Reported by Chronos]](https://ieeexplore.ieee.org/document/10646793)
+##  SEGV cased by nullptr after a series of reconnection timeouts in MySQL-Cluster breaks down multiple nodes [[Reported by Chronos]](https://ieeexplore.ieee.org/document/10646793)
 
 ### Summary
 The MySQL node will enter "check_and_report" function when errors occur without any check inside. If the errors recover just after it enter the "check_and_report" function, it will clean up the diagnostic report pointer(*da) so that the report function using this pointer may cause a SEGV fault.

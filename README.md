@@ -7,21 +7,25 @@ This project collects and analyzes common failure scenarios in distributed syste
 
 ### [Aerospike](./Aerospike/doc.md).
 
+### [Braft](./Braft/doc.md)
+
 ### [Chronos](./chronos/doc.md).
 
 ### [Crate](./Crate/doc.md).
 
 ### [CephFS](./CephFS/doc.md).
 
+### [Dqlite](./dqlite/doc.md).
+
 ### [Etcd](./etcd/doc.md).
 
-### [Dqlite](./dqlite/doc.md).
+### [MySQL-Cluster](./MySQL-Cluster/doc.md)
+
+### [Redis](./redis/doc.md).
 
 ### [Redisraft](./redisraft/doc.md).
 
 ### [Zookeeper](./zookeeper/doc.md).
-
-### [Redis](./redis/doc.md).
 
 ## Overview
 
@@ -29,10 +33,12 @@ This project collects and analyzes common failure scenarios in distributed syste
 |----------|----------|----------|
 | [ZK-2247](./zookeeper/doc.md#zookeeper-service-becomes-unavailable-when-leader-fails-to-write-transaction-log-issue-2247)    | Zookeeper service becomes unavailable when leader fails to write transaction log    |  IO exception   |
 | [ZK-4203](./zookeeper/doc.md#leader-swallows-the-zookeeperserverstateerror-from-leaderlearnercnxacceptor-in-some-concurrency-condition-issue-4203)   | Leader swallows the ZooKeeperServer.State.ERROR from Leader.LearnerCnxAcceptor in some concurrency condition   | Restart, IO exception   | 
+| [Chronos-1](./zookeeper/doc.md#deadlock-in-zookeeper-node-when-both-sendthread-and-reconnection-timeout-and-tries-to-update-states-reported-by-chronos)|DeadLock in ZooKeeper node when both sendThread and reconnection timeout and tries to update states|Delay|
 | [ET-716](./etcd/doc.md#crash-when-joining-nodes-to-the-cluster-issue-716)    | Crash when joining nodes to the cluster  | Multiple nodes restart simultaneously   | 
 | [ET-828](./etcd/doc.md#incorrect-behavior-under-network-partition-issue-828)    | Incorrect behavior under network partition  | Network partition   | 
 | [DQ-323](./dqlite/doc.md#lxd-start-up-loop-trying-to-connect-to-dqlite-after-loss-of-quorum-issue-323) |LXD start up loop trying to connect to dqlite after loss of quorum|Node crash and restart|
 | [DQ-324](./dqlite/doc.md#lxd-dqlite-crash-removing-member-of-cluster-issue-324) |LXD dqlite crash removing member of cluster|Node removal|
+| [MALLORY-11](./dqlite/doc.md#violate-invariant-as-a-segment-cannot-open-while-truncating-inconsistent-logs-reported-by-mallory)|Violate invariant as a segment cannot open while truncating inconsistent logs|Node crashes and network partition|
 |[RR-14](./redisraft/doc.md#total-data-loss-on-failover-issue-14) |Total data loss on failover|Node crash or network partition|
 |[RR-17](./redisraft/doc.md#possible-lost-updates-with-partitions-and-membership-changes-issue-17) |Possible lost updates with partitions and membership changes|Network partition|
 |[RD-9688](./redis/doc.md#unbounded-memory-usage-by-cluster-bus-link-buffers-in-face-of-asymmetric-network-partition-issue-9688) |Unbounded memory usage by cluster bus link buffers in face of asymmetric network partition|Network loss|
@@ -42,6 +48,10 @@ This project collects and analyzes common failure scenarios in distributed syste
 |[Ae-3](./Aerospike/doc.md#updates-lost-due-to-concurrent-crashes-reported-by-jepsen)|Updates lost due to concurrent crashes|Concurrent node crash|
 |[Ch-511](./chronos/doc.md#jobs-dont-run-when-a-network-partition-occurs--issue-511)|Jobs don't run when a network partition occurs|Network parition|
 |[Cr-3711](./Crate/doc.md#_version-does-not-uniquely-identify-a-particular-version-of-a-row-issue-3711)|Inconsistent Row Values in CrateDB During Network Partition with Identical _version Numbers|Network partition|
+|[MALLORY-2](./Braft/doc.md#leak-memory-of-the-server-when-killed-before-its-status-becomes-running-reported-by-mallory)|Leak memory of the server when killed before its status becomes running|Node pause and network partition|
+|[Chronos-6](./MySQL-Cluster/doc.md#segv-cased-by-nullptr-after-a-series-of-reconnection-timeouts-in-mysql-cluster-breaks-down-multiple-nodes-reported-by-chronos)|SEGV cased by nullptr after a series of reconnection timeouts in MySQL-Cluster breaks down multiple nodes|Delay|
+
+
 
 ## Paper
 * Efficient Exposure of Partial Failure Bugs in Distributed Systems with Inferred Abstract States
